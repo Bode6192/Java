@@ -1,0 +1,61 @@
+server:
+  port: 8082
+
+spring:
+  profiles:
+    active: prod
+
+---
+
+spring:
+  profile: dev
+  datasource:
+    driver-class-nme: com.mysql.jdbc.Driver
+    password: bode2001
+    url: jdbc:mysql://localhost:3306/dcbapp
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcome:
+  message: Welcome to Daily Code Buffer!!!
+
+---
+
+spring:
+  profile: qa
+  datasource:
+    driver-class-nme: com.mysql.jdbc.Driver
+    password: bode2001
+    url: jdbc:mysql://localhost:3306/dcbapp-qa
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcome:
+  message: Welcome to Daily Code Buffer!!!
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "env,beans"
+
+---
+
+spring:
+  profile: prod
+  datasource:
+    driver-class-nme: com.mysql.jdbc.Driver
+    password: bode2001
+    url: jdbc:mysql://localhost:3306/dcbapp-prod
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcome:
+  message: Welcome to Daily Code Buffer!!!
