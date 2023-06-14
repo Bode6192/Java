@@ -50,6 +50,51 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-oauth2-authorization-server</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.mastfrog.builder</groupId>
+			<artifactId>builder-builder-parent</artifactId>
+			<version>1.0.7</version>
+		</dependency>
+		<dependency>
+			<groupId>com.mastfrog.builder</groupId>
+			<artifactId>builder-builder-parent</artifactId>
+			<version>1.0.7</version>
+		</dependency>
+		<dependency>
+			<groupId>com.mastfrog.builder</groupId>
+			<artifactId>builder-builder-demo</artifactId>
+			<version>1.0.7</version>
+		</dependency>
+		<dependency>
+			<groupId>com.mastfrog.builder</groupId>
+			<artifactId>builder-builder-demo</artifactId>
+			<version>1.0.7</version>
+		</dependency>
+		<dependency>
+			<groupId>net.guerlab.builder</groupId>
+			<artifactId>guerlab-builder</artifactId>
+			<version>1.5.1</version>
+		</dependency>
+		<dependency>
+			<groupId>net.guerlab.builder</groupId>
+			<artifactId>guerlab-builder</artifactId>
+			<version>1.5.1</version>
+		</dependency>
+		<dependency>
+			<groupId>net.guerlab.builder</groupId>
+			<artifactId>guerlab-builder</artifactId>
+			<version>1.5.1</version>
+		</dependency>
+		<dependency>
+			<groupId>net.guerlab.builder</groupId>
+			<artifactId>guerlab-builder</artifactId>
+			<version>1.5.1</version>
+		</dependency>
 	</dependencies>
 
 	<build>

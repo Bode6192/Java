@@ -1,4 +1,4 @@
-package com.dailycodebuffer.springsecuritytutorial.entity;
+package com.dailycodebuffer.oauthserver.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

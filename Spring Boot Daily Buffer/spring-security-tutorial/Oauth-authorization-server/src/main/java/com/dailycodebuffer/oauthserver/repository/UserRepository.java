@@ -1,6 +1,6 @@
-package com.dailycodebuffer.springsecuritytutorial.repository;
+package com.dailycodebuffer.oauthserver.repository;
 
-import com.dailycodebuffer.springsecuritytutorial.entity.User;
+import com.dailycodebuffer.oauthserver.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -8,6 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface UserRepository extends JpaRepository<User, Long> {
 
     User findByEmail(String email);
-
 
 }
