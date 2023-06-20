@@ -3,11 +3,21 @@ server:
 
 spring:
   datasource:
-    driver-class-nme: com.mysql.jdbc.Driver
     password: bode2001
     url: jdbc:mysql://localhost:3306/sms
     username: root
+
+  thymeleaf:
+    enabled: true
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+    mode: HTML
+
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+
+
