@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ea23aec1-66eb-4cbc-8605-812dc8dbc9c1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EmailApp/src/main/java/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EmailApp/src/main/java/Email.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../README.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring Boot Daily Buffer/Oauth-authorization-server/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring Boot Daily Buffer/Oauth-authorization-server/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring Boot Daily Buffer/Oauth-authorization-server/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring Boot Daily Buffer/Oauth-authorization-server/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring Boot Daily Buffer/Oauth-authorization-server/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring Boot Daily Buffer/Oauth-authorization-server/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring Boot Daily Buffer/Oauth-authorization-server/src/main/java/com/dailycodebuffer/oauthserver/OauthAuthorizationServerApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring Boot Daily Buffer/Oauth-authorization-server/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring Boot Daily Buffer/Oauth-authorization-server/src/test/java/com/dailycodebuffer/oauthserver/OauthAuthorizationServerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring Boot Daily Buffer/Spring-Boot-Student_Department_Project/src/main/java/com/dailycodebuffer/SpringBoot/Tutorial/controller/DepartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Spring Boot Daily Buffer/Spring-Boot-Student_Department_Project/src/main/java/com/dailycodebuffer/SpringBoot/Tutorial/controller/DepartmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring Boot Daily Buffer/Spring-Boot-Student_Department_Project/src/main/java/com/dailycodebuffer/SpringBoot/Tutorial/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Spring Boot Daily Buffer/Spring-Boot-Student_Department_Project/src/main/java/com/dailycodebuffer/SpringBoot/Tutorial/controller/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring Boot Daily Buffer/Spring-Boot-Student_Department_Project/src/main/java/com/dailycodebuffer/SpringBoot/Tutorial/entity/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Spring Boot Daily Buffer/Spring-Boot-Student_Department_Project/src/main/java/com/dailycodebuffer/SpringBoot/Tutorial/entity/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Spring Boot Daily Buffer/Spring-Boot-Student_Department_Project/src/test/java/com/dailycodebuffer/SpringBoot/Tutorial/controller/DepartmentControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Spring Boot Daily Buffer/Spring-Boot-Student_Department_Project/src/test/java/com/dailycodebuffer/SpringBoot/Tutorial/controller/DepartmentControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../student-management-system/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../student-management-system/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../student-management-system/src/main/java/net/javaguides/studentmanagementsystem/StudentManagementSystemApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../student-management-system/src/main/java/net/javaguides/studentmanagementsystem/StudentManagementSystemApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../student-management-system/src/main/java/net/javaguides/studentmanagementsystem/entity/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../student-management-system/src/main/java/net/javaguides/studentmanagementsystem/entity/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../student-management-system/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../student-management-system/src/main/resources/application.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2RF8c6FiO7iO230Ed8t9Knc9hVA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/USER/Desktop/Programming codes/Java/Java Projects"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ea23aec1-66eb-4cbc-8605-812dc8dbc9c1" name="Changes" comment="" />
+      <created>1686834546349</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1686834546349</updated>
+    </task>
+    <servers />
+  </component>
+</project>

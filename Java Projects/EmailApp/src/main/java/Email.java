@@ -2,11 +2,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.InputStream;
 import java.util.Scanner;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 public class Email {
 
     private String firstName;
@@ -18,6 +18,10 @@ public class Email {
     private int defaultPasswordLength = 8;
     private String alternateEmail;
     private String companySuffix = "G&D.com";
+
+    public Email(){
+
+    }
 
     // Constructor
 

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Book Store</title>
+</head>
+<body>
+<h1>Home Page</h1>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#">Book Store</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" th:href="available_books">Available Books</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" th:href="my_books">My Books</a>
+                </li>
+            </ul>
+            <div>
+                <a class="nav-link text-white" th:href="book_register">New Book Register</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container text-center">
+    <h1> WELCOME TO BRIGHT'S BOOK STORE</h1>
+    <h6>Welcome to Bright's Book Store, your premier destination for all things books! Whether you're an avid reader, a
+        book enthusiast, or simply looking for your next great read, our bookstore has got you covered.
+
+        At Excel Book Store, we believe in the power of literature to inspire, entertain, and broaden our horizons. Our
+        carefully curated collection features a wide range of genres, from thrilling mysteries to heartwarming romances,
+        thought-provoking non-fiction to captivating fantasy worlds. Whatever your interests, you'll find an extensive
+        selection of books to satisfy your literary cravings.
+
+        We take pride in offering a personalized shopping experience for every customer. Whether you prefer the feel of
+        a physical book in your hands or the convenience of digital reading, we cater to
+        all preferences. Explore our shelves or browse our online store, and we'll ensure that you find the perfect book
+        to accompany you on your reading journey.
+
+        Thank you for choosing Excel Book Store as your go-to destination for quality books. We're dedicated to
+        providing an exceptional reading experience, and we can't wait to help you embark on countless new literary
+        adventures. Happy reading!</h6>
+    <img src="/clay-banks-z_DkoUqgx6M-unsplash.jpg" width="360px">
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
