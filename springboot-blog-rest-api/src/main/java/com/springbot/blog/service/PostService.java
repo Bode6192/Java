@@ -1,11 +1,15 @@
 package com.springbot.blog.service;
 
 import com.springbot.blog.entity.Post;
+import com.springbot.blog.exception.ResourceNotFoundException;
 import com.springbot.blog.payload.PostDto;
 import com.springbot.blog.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import org.springframework.data.domain.Pageable;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,14 +28,33 @@ public class PostService {
        return postDto1;
     }
 
-    public List<PostDto> getAllPosts() {
+    public List<PostDto> getAllPosts(int pageNo, int pageSize) {
 
-        List<Post> posts = postRepository.findAll();
-        return posts.stream().map(post -> mapToDto(post)).collect(Collectors.toList());
+        Pageable pageable = PageRequest.of(pageNo, pageSize);
+        Page<Post> posts = postRepository.findAll(pageable);
+        List<Post> listOfPosts = posts.getContent();
+
+        return listOfPosts.stream().map(post -> mapToDto(post)).collect(Collectors.toList());
     }
 
-    public Post getPostById() {
+    public PostDto getPostById(long id) {
 
+        Post post = (postRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Post", "id", id)));
+        return mapToDto(post);
+    }
+
+    public PostDto updatePost(PostDto postDto, long id) {
+
+        System.out.println(postDto);
+
+        Post post = postRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Post", "id", id));
+
+        post.setContent(postDto.getContent());
+        post.setDescription(postDto.getDescription());
+        post.setTitle(postDto.getTitle());
+
+        Post updatePost = postRepository.save(post);
+        return mapToDto(updatePost);
     }
 
     private PostDto mapToDto(Post post){
@@ -53,5 +76,11 @@ public class PostService {
         post.setContent(postDto.getContent());
 
         return post;
+    }
+
+    public void deletePostById(Long id) {
+
+        Post post = postRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Post", "id", id));
+        postRepository.delete(post);
     }
 }
