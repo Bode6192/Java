@@ -7,6 +7,13 @@ spring:
     username: root
     password: bode2001
 
+  thymeleaf:
+    enabled: true
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+    mode: HTML
+
   jpa:
     hibernate:
       ddl-auto: update
