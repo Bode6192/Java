@@ -1,12 +1,14 @@
 package com.springbot.blog.service;
 
 import com.springbot.blog.entity.Post;
+import com.springbot.blog.payload.PostResponse;
 import com.springbot.blog.exception.ResourceNotFoundException;
 import com.springbot.blog.payload.PostDto;
 import com.springbot.blog.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import org.springframework.data.domain.Pageable;
@@ -28,13 +30,28 @@ public class PostService {
        return postDto1;
     }
 
-    public List<PostDto> getAllPosts(int pageNo, int pageSize) {
+    public PostResponse getAllPosts(int pageNo, int pageSize, String sortBy, String sortDir) {
 
-        Pageable pageable = PageRequest.of(pageNo, pageSize);
+        Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortBy).ascending()
+                : Sort.by(sortBy).descending();
+
+        Pageable pageable = PageRequest.of(pageNo, pageSize, sort);
+
         Page<Post> posts = postRepository.findAll(pageable);
+
         List<Post> listOfPosts = posts.getContent();
 
-        return listOfPosts.stream().map(post -> mapToDto(post)).collect(Collectors.toList());
+        List<PostDto> content = listOfPosts.stream().map(post -> mapToDto(post)).collect(Collectors.toList());
+
+        PostResponse postResponse = new PostResponse();
+        postResponse.setContent(content);
+        postResponse.setPageNo(posts.getPageable().getPageNumber());
+        postResponse.setPageSize(posts.getPageable().getPageSize());
+        postResponse.setLast(posts.isLast());
+        postResponse.setTotalElements(posts.getTotalElements());
+        postResponse.setTotalPages(posts.getTotalPages());
+
+        return postResponse;
     }
 
     public PostDto getPostById(long id) {
