@@ -1,6 +1,6 @@
 package com.springbot.blog.controller;
 
-import com.springbot.blog.payload.PostResponse;
+import com.springbot.blog.payload.response.PostResponse;
 import com.springbot.blog.payload.PostDto;
 import com.springbot.blog.service.PostService;
 import com.springbot.blog.utils.AppConstants;
