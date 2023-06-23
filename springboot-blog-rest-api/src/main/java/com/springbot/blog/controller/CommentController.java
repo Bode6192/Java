@@ -2,6 +2,7 @@ package com.springbot.blog.controller;
 
 import com.springbot.blog.payload.CommentDto;
 import com.springbot.blog.service.CommentService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +20,7 @@ public class CommentController {
 
     @PostMapping
     public ResponseEntity<CommentDto> createComment(@PathVariable(value = "postId") long postId,
-                                    @RequestBody CommentDto commentDto){
+                                    @Valid @RequestBody CommentDto commentDto){
 
         return new ResponseEntity<>(commentService.createComment(postId, commentDto), HttpStatus.CREATED);
     }
@@ -40,8 +41,15 @@ public class CommentController {
     @PutMapping("/{commentId}")
     public ResponseEntity<CommentDto> updateCommentByCommentId(@PathVariable(value = "postId") long postId,
                                                                @PathVariable(value = "commentId") long commentId,
-                                                               @RequestBody CommentDto commentRequest){
+                                                               @Valid @RequestBody CommentDto commentRequest){
 
         return commentService.updateCommentByCommentId(postId, commentId, commentRequest);
+    }
+
+    @DeleteMapping("/{commentId}")
+    public ResponseEntity<String> deleteCommentByCommentId(@PathVariable(value = "postId") long postId,
+                                                           @PathVariable(value = "commentId") long commentId){
+
+        return commentService.deleteCommentByCommentId(postId, commentId);
     }
 }

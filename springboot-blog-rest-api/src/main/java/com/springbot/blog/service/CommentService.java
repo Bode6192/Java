@@ -84,4 +84,21 @@ public class CommentService {
 
         return ResponseEntity.ok(modelMapper.map(updatedComment, CommentDto.class));
     }
+
+    public ResponseEntity<String> deleteCommentByCommentId(long postId, long commentId){
+
+        Post post = postRepository.findById(postId).orElseThrow(() ->
+                new ResourceNotFoundException("Post", "Id", postId));
+
+        Comment comment = commentRepository.findById(commentId).orElseThrow(() ->
+                new ResourceNotFoundException("Comment", "id", commentId));
+
+        if (!comment.getPost().getId().equals(post.getId())){
+            throw new BlogAPIException(HttpStatus.BAD_REQUEST, "Comment does not belong to Post");
+        }
+
+        commentRepository.delete(comment);
+
+        return ResponseEntity.ok(String.format("Comment %d from Post %d has been deleted", commentId, postId));
+    }
 }
