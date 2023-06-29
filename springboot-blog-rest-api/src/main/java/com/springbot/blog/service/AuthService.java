@@ -38,7 +38,7 @@ public class AuthService {
         return "User logged in Successfully!!!";
     }
 
-    public String signup(SignUpDto signUpDto){
+    public String signUp(SignUpDto signUpDto){
 
         // Check for already existing UserName
         if(userRepository.existsByUserName(signUpDto.getUserName())) {
