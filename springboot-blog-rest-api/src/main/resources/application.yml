@@ -7,12 +7,12 @@ spring:
     username: root
     password: bode2001
 
+  app:
+    jwt-secret: ef9d87ad31b7e4e25afe9c2deee6359dec8b894047dce8b0c0bf2c1f3ab786b1
+    jwt-expiration-milliseconds: 604800000
+
   jpa:
     hibernate:
       dialect: org.hibernate.dialect.MySQLDialect
       ddl-auto: update
     show-sql: true
-
-  app:
-    jwt-secret: ef9d87ad31b7e4e25afe9c2deee6359dec8b894047dce8b0c0bf2c1f3ab786b1
-    jwt-expiration-milliseconds: 604800000

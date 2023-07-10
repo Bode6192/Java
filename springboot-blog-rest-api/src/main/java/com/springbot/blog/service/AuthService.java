@@ -7,6 +7,7 @@ import com.springbot.blog.payload.LoginDto;
 import com.springbot.blog.payload.SignUpDto;
 import com.springbot.blog.repository.RoleRepository;
 import com.springbot.blog.repository.UserRepository;
+import com.springbot.blog.security.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -27,6 +28,7 @@ public class AuthService {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
     private  final PasswordEncoder passwordEncoder;
+    private final JwtTokenProvider jwtTokenProvider;
 
     public String login(LoginDto loginDto) {
 
@@ -35,7 +37,9 @@ public class AuthService {
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
-        return "User logged in Successfully!!!";
+        String token = jwtTokenProvider.generateToken(authentication);
+
+        return token;
     }
 
     public String signUp(SignUpDto signUpDto){
