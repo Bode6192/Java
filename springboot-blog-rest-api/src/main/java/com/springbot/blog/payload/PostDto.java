@@ -29,4 +29,7 @@ public class PostDto {
     private String content;
 
     private Set<CommentDto> comments;
+
+    @NotNull
+    private Long categoryId;
 }

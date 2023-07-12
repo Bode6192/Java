@@ -1,9 +1,11 @@
 package com.springbot.blog.service;
 
+import com.springbot.blog.entity.Category;
 import com.springbot.blog.entity.Post;
 import com.springbot.blog.payload.response.PostResponse;
 import com.springbot.blog.exception.ResourceNotFoundException;
 import com.springbot.blog.payload.PostDto;
+import com.springbot.blog.repository.CategoryRepository;
 import com.springbot.blog.repository.PostRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,9 @@ import org.springframework.stereotype.Service;
 
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class PostService {
 
@@ -22,10 +27,17 @@ public class PostService {
 
     private final ModelMapper modelMapper = new ModelMapper();
 
+    @Autowired
+    private CategoryRepository categoryRepository;
+
 
     public PostDto createPost(PostDto postDto){
 
+        Category category = categoryRepository.findById(postDto.getCategoryId())
+                .orElseThrow(() -> new ResourceNotFoundException("Category", "Id", postDto.getCategoryId()));
+
         Post post = modelMapper.map(postDto, Post.class);
+        post.setCategory(category);
         Post newPost = postRepository.save(post);
 
         return modelMapper.map(newPost, PostDto.class);
@@ -55,9 +67,13 @@ public class PostService {
 
         Post post = postRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Post", "id", id));
 
+        Category category = categoryRepository.findById(postDto.getCategoryId())
+                .orElseThrow(() -> new ResourceNotFoundException("Category", "Id", postDto.getCategoryId()));
+
         post.setContent(postDto.getContent());
         post.setDescription(postDto.getDescription());
         post.setTitle(postDto.getTitle());
+        post.setCategory(category);
 
         Post updatePost = postRepository.save(post);
 
@@ -69,5 +85,16 @@ public class PostService {
 
         Post post = postRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Post", "id", id));
         postRepository.delete(post);
+    }
+
+
+    public List<PostDto> getPostsByCategoryId(Long categoryId) {
+
+        Category category = categoryRepository.findById(categoryId)
+                .orElseThrow(() -> new ResourceNotFoundException("Category", "Id", categoryId));
+
+        List<Post> posts = postRepository.findByCategoryId(categoryId);
+
+        return posts.stream().map(post -> modelMapper.map(post, PostDto.class)).collect(Collectors.toList());
     }
 }
