@@ -4,8 +4,8 @@ import com.springbot.blog.payload.JwtAuthResponse;
 import com.springbot.blog.payload.LoginDto;
 import com.springbot.blog.payload.SignUpDto;
 import com.springbot.blog.service.AuthService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.mapping.BasicValue;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,7 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/auth")
+@RequestMapping("/api/v1/auth")
+@Tag(
+        name = "CRUD REST APIs for Authentication Resource"
+)
 public class AuthController {
 
     private final AuthService authService;

@@ -1,0 +1,14 @@
+server:
+  port: 5000
+
+spring:
+  datasource:
+    url: jdbc:mysql://blogappinstance.cewanc9dqr24.us-east-1.rds.amazonaws.com:3306/myblogapp
+    username: bode_faithful
+    password: bode6192
+
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.MySQLDialect
+      ddl-auto: update
+    show-sql: true

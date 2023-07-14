@@ -2,6 +2,8 @@ package com.springbot.blog.controller;
 
 import com.springbot.blog.payload.CategoryDto;
 import com.springbot.blog.service.CategoryService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,11 +14,17 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/categories")
+@RequestMapping("api/v1/categories")
+@Tag(
+        name = "CRUD REST APIs for Category Resource"
+)
 public class CategoryController {
 
     private final CategoryService categoryService;
 
+    @SecurityRequirement(
+            name = "Bearer Authentication"
+    )
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public ResponseEntity<CategoryDto> addCategory(@RequestBody CategoryDto categoryDto){
@@ -42,6 +50,9 @@ public class CategoryController {
         return new ResponseEntity<>(categoryDtoList, HttpStatus.OK);
     }
 
+    @SecurityRequirement(
+            name = "Bearer Authentication"
+    )
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
     public ResponseEntity<CategoryDto> updateCategoryById(@RequestBody CategoryDto categoryDto,
@@ -52,6 +63,9 @@ public class CategoryController {
         return ResponseEntity.ok(updatedCategory);
     }
 
+    @SecurityRequirement(
+            name = "Bearer Authentication"
+    )
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteCategoryById(@PathVariable("id") Long categoryId) {
